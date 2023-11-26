@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* CSS Document */
+
+Body {
+	Background:#333333;
+}
+
+* {
+	
+
+	margin: 0;
+	padding:0;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	color: #F7F7F7;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   padding: 10px;
+   background-color: #3498DB;
+   color: white;
+   text-align: left;
+}
+
+img {
+	height: 100px;
+}
+
+.top-bar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	background:#3498DB;
+	height: 80px;
+	padding: 5px;
+	
+}
+
+.menu {
+	display: flex;
+	flex-direction: row;
+	list-style-type: none;
+
+}
+
+li {
+	padding: 25px;
+	overflow: hidden;
+	/*mellemrum mellem navigations-links*/
+}
+
+.menu-box {
+	height: 100%;
+	width: 30px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon, .icon::before, .icon::after {
+	display: block;
+	background: white;
+	position: absolute;
+	height: 4px;
+	width: 30px;
+	border-radius: 2px;
+	transition: transform 400ms;
+}
+
+.icon::before {
+	content: "";
+	margin-top: -8px
+}
+
+.icon::after {
+	content: "";
+	margin-top: 8px
+}
+
+#activate:checked + .menu-box .icon::before {
+	margin-top: 0;
+	transform: rotate(45deg);
+}
+
+#activate:checked + .menu-box .icon::after {
+	margin-top: 0;
+	transform: rotate(-45deg);
+	
+}
+#activate:checked + .menu-box .icon {
+	background: rgba(113,0,255,0)
+}
+
+#activate { 
+	display:none;
+}
+
+.menu-box {
+	display: none;
+}
+
+@media screen and (max-width: 700px) {
+	.menu-box {
+		display: flex;
+	}
+	
+	.menu{
+		position: absolute;
+		top: 0;
+		margin-top: 60px;
+		left: 0;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	#activate ~ .menu li {
+		height: 0;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		transit: height 400ms;
+	}
+	
+	#activate:checked ~ .menu li {
+		border: 1px solid white;
+		height: 40px;
+		padding: 5px;
+		transition: height 400ms;
+	}
+	
+	.menu li {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		padding: 5px;
+		width: 100%;
+		background: #3498DB;
+		
+	}
+.rowimage {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.columnimage {
+  flex: 50%;
+  padding: 0 4px;
+}
+.columnimage img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
